@@ -52,7 +52,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -386,9 +386,6 @@
 
     </section>
 
-
-
-
   </div>
   <!--footer-->
   <div id="FOOTER">
@@ -437,59 +434,6 @@
   </div>
   <!--footer end-->
   <!--wraper end-->
-
-  <script>
-    //rwd menu
-
-    $('.scroll_btn').click(function () {
-      $('#NAV').toggleClass('reveal');
-      $('#nav-icon3').toggleClass('open');
-      $('body').toggleClass('menu-open');
-      var ta_value = $(this).attr('data');
-      $('html,body').animate({ scrollTop: $(ta_value).offset().top }, 800);
-    });
-
-
-    $('.NAV_btn_wrap').on('click', function (e) {
-      e.stopPropagation();
-      $('#NAV').toggleClass('reveal');
-      $('#nav-icon3').toggleClass('open');
-
-      $('body').toggleClass('menu-open');
-    });
-  </script>
-
-  <script>
-    //goTop
-
-    $(window).scroll(function () {
-      if ($(this).scrollTop() > 100) {
-        $('.goTop').fadeIn();
-      } else {
-        $('.goTop').fadeOut();
-      }
-
-
-    });
-
-    //Click event to scroll
-    $('.goTop').click(function () {
-      $('html, body').animate({ scrollTop: 0 }, 800);
-      return false;
-    });
-
-
-
-    $('.file_item').eq(0).show();
-    $('.film_btn').on('click', function (e) {
-      e.stopPropagation();
-      var ta_index = $(this).index();
-
-      $('.file_item').eq(ta_index).show().siblings().hide();
-    });
-  </script>
-
-
 </body>
 
 </html>

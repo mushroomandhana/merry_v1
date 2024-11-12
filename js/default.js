@@ -145,3 +145,44 @@ $(function () {
         },
     });
 });
+
+
+// rwd menu and goTop 
+// 使用 $(document).ready()：確保 JS 在 DOM 完全加載後執行
+$(document).ready(function () {
+    $('.scroll_btn').click(function () {
+        $('#NAV').toggleClass('reveal');
+        $('#nav-icon3').toggleClass('open');
+        $('body').toggleClass('menu-open');
+        var ta_value = $(this).attr('data');
+        $('html,body').animate({ scrollTop: $(ta_value).offset().top }, 800);
+    });
+
+    $('.NAV_btn_wrap').on('click', function (e) {
+        e.stopPropagation();
+        $('#NAV').toggleClass('reveal');
+        $('#nav-icon3').toggleClass('open');
+        $('body').toggleClass('menu-open');
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('.goTop').fadeIn();
+        } else {
+            $('.goTop').fadeOut();
+        }
+    });
+
+    $('.goTop').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800);
+        return false;
+    });
+
+    $('.file_item').eq(0).show();
+    $('.film_btn').on('click', function (e) {
+        e.stopPropagation();
+        var ta_index = $(this).index();
+        $('.file_item').eq(ta_index).show().siblings().hide();
+    });
+});
+
